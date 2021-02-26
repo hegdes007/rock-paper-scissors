@@ -1,0 +1,260 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1251%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='rgba(239%2c 46%2c 46%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c501.386C99.388%2c498.398%2c210.455%2c510.082%2c287.105%2c446.744C362.537%2c384.411%2c352.208%2c268.394%2c390.785%2c178.465C428.167%2c91.321%2c507.17%2c21.417%2c510.212%2c-73.357C513.466%2c-174.75%2c467.048%2c-271.023%2c407.857%2c-353.41C344.793%2c-441.188%2c264.257%2c-517.561%2c163.315%2c-556.199C57.713%2c-596.621%2c-71.098%2c-631.387%2c-168.556%2c-574.049C-266.613%2c-516.359%2c-247.912%2c-364.992%2c-316.265%2c-274.046C-377.32%2c-192.811%2c-502.949%2c-171.885%2c-541.485%2c-77.854C-582.636%2c22.559%2c-571.648%2c141.767%2c-527.257%2c240.79C-482.733%2c340.11%2c-395.995%2c416.124%2c-298.419%2c464.35C-206.702%2c509.681%2c-102.262%2c504.461%2c0%2c501.386' fill='%23e11111'%3e%3c/path%3e%3cpath d='M1920 1622.71C2043.972 1613.545 2168.878 1692.779 2284.552 1647.254 2407.564 1598.841 2492.21 1485.993 2558.295 1371.5 2629.143 1248.756 2692.367 1112.11 2674.594 971.506 2656.7129999999997 830.045 2572.7889999999998 700.1410000000001 2462.075 610.289 2359.629 527.147 2215.646 540.913 2090.94 497.831 1958.001 451.905 1844.888 331.486 1705.317 348.856 1561.535 366.75 1445.035 476.837 1353.9850000000001 589.546 1264.8719999999998 699.857 1177.9 835.953 1198.4769999999999 976.261 1218.6 1113.477 1401.004 1164.57 1456.926 1291.479 1514.137 1421.314 1403.681 1621.3 1519.08 1703.8429999999998 1632.271 1784.807 1781.212 1632.97 1920 1622.71' fill='%23f25656'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1251'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+}
+
+.score {
+    padding-top: 15px;
+    height: 10vh;
+    color: rgb(232, 233, 232);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.score h2 {
+    font-size: 1.5rem;
+}
+.score p {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+.intro {
+    color: rgb(232, 233, 232);
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+.intro h1 {
+    font-size: 3.1rem;
+    padding: 60px;
+}
+
+.intro button,.match button {
+    font-family: 'Times New Roman', Times, serif;
+    width: 10rem;
+    height: 50px;
+    border: 1px solid black;
+    color: rgb(232, 233, 232);
+    font-size: 2rem;
+    background: rgb(163, 50, 50);
+    border-radius: 4px;
+    cursor: pointer;
+}
+.intro button:hover {
+    border: 1px solid black;
+    background: rgb(121, 38, 38);
+    color: rgb(255, 255, 255);
+}
+.match button:hover {
+    border: 3px solid black;
+    background: rgb(174, 245, 93);
+    color: rgb(0, 0, 0);
+}
+
+.match {
+    height: 50vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: opacity 0.5s ease 0.5s;
+}
+.winner {
+    color: rgb(232, 233, 232);
+    text-align: center;
+    font-size: 3rem;
+}
+
+.hands, .options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.player-hand {
+    transform: rotateY(180deg);
+}
+
+div.fadeOut {
+    opacity: 0;
+    pointer-events: none;
+}
+div.fadeIn {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.description{
+    margin-top: 0;
+    height: 50vh;
+    padding: 10%;
+    font-size: larger;
+    color: thistle;
+    font-style: italic;
+}
+.description h2 {
+    text-align: center;
+    color: rgb(19, 14, 14);
+}
+.rules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ul {
+    display: inline-block;
+}
+
+
+
+@keyframes shakePlayer {
+    0% {
+      transform: rotateY(180deg) translateY(0px);
+    }
+    15% {
+      transform: rotateY(180deg) translateY(-50px);
+    }
+    25% {
+      transform: rotateY(180deg) translateY(0px);
+    }
+    35% {
+      transform: rotateY(180deg) translateY(-50px);
+    }
+    50% {
+      transform: rotateY(180deg) translateY(0px);
+    }
+    65% {
+      transform: rotateY(180deg) translateY(-50px);
+    }
+    75% {
+      transform: rotateY(180deg) translateY(0px);
+    }
+    85% {
+      transform: rotateY(180deg) translateY(-50px);
+    }
+    100% {
+      transform: rotateY(180deg) translateY(0px);
+    }
+  }
+  
+  @keyframes shakeComputer {
+    0% {
+      transform: translateY(0px);
+    }
+    15% {
+      transform: translateY(-50px);
+    }
+    25% {
+      transform: translateY(0px);
+    }
+    35% {
+      transform: translateY(-50px);
+    }
+    50% {
+      transform: translateY(0px);
+    }
+    65% {
+      transform: translateY(-50px);
+    }
+    75% {
+      transform: translateY(0px);
+    }
+    85% {
+      transform: translateY(-50px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  
+  .winning-message {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0;
+    right: 0%;
+    bottom: 0%;
+    background-color:rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    flex-direction: column;
+  }
+  
+  .winning-message input {
+    font-size: 3rem;
+    color: rgb(2, 31, 1);
+    font-style: italic;
+    background-color: rgba(200, 221, 182, 0.822);
+    border: 1px solid black;
+    border-radius: 2rem;
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+  }
+  .winning-message input:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+  }
+  
+  .winning-message.show {
+      display: flex;
+  }
+
+@media screen and (max-width:600px ) {
+    .score p{
+        padding: 0px;
+    }
+    .intro {
+        margin-top: 8px;
+    }
+    .intro h1 {
+        font-size: 2rem;
+        padding: 0;
+    }
+    .intro button {
+        margin-top: 5px;
+        width: 7rem;
+        font-size: 1.3rem;
+    }
+    img {
+        width: 50vw;
+    }
+    .match button {
+        width: 5rem;
+        font-size: 1.2rem;
+    }
+    .winner {
+        font-size: 2rem;
+    }
+    .winning-message input {
+        font-size: 2rem;
+    }
+    .winning-message {
+        font-size: 1.7rem;
+    }
+    .description{
+        padding: 5%;
+        font-size: small;
+    }
+    .rules{
+        padding: 5%;
+        font-size: smaller;
+    }
+}

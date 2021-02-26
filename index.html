@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rock-Paper-Scissors game built using Javascript">
+    <meta name="keywords" content="Rock-Paper-Scissors, Rock paper scissors,hand game, game, HTML, CSS, Javascript">
+    <meta name="author" content="Darshan M Hegde">
+    <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section class="game">
+        <div class="score">
+            <div class="player-score">
+                <h2>Player</h2>
+                <p>0</p>
+            </div>
+            <div class="computer-score">
+                <h2>Computer</h2>
+                <p>0</p>
+            </div>
+        </div>
+
+        <div class="intro">
+            <h1>Rock-Paper-Scissors</h1>
+            <button>Let's Play</button>
+        </div>
+
+        <div class="match fadeOut">
+            <h2 class="winner">Choose an option</h2>
+            <div class="hands">
+                <img class="player-hand" src="./Images/rock.png" alt="hand">
+                <img class="computer-hand" src="./Images/rock.png" alt="hand">
+            </div>
+            <div class="options">
+                <button class="rock">rock</button>
+                <button class="paper">paper</button>
+                <button class="scissors">scissors</button>
+            </div>
+        </div>
+
+        <div class="description">
+            <div class="about">
+                <h2>About</h2>
+                <p>“Rock paper scissors” is a hand game played between two people, in which each player simultaneously forms one of the three shapes with an outstretched hand. Many of us used to play it in schools to resolve disputes or just to spend some time. Still you want to play the game but your friends are not with you at this moment? Don't worry at all. This site allows you to play with your computer at any time you want.
+                </p> <br>
+            </div>
+            <div class="rules">
+                <h2>What are the rules?</h2>
+                    <p>The rules are very simple:</p>
+                <ul>
+                    <li>If you choose Rock, you will win against Scissors but lose against Paper.</li>
+                    <li>If you choose Scissors, you will win against Paper but lose against Rock.</li>
+                    <li>If you choose Paper, you will win against Rock but lose against Scissors.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="winning-message" id="winningMessage">
+            <div data-winning-message-text></div>
+            <input type="button" value="Restart" onclick="window.location.reload()"></input>
+        </div>
+    </section>
+    <script src="./app.js"></script>
+</body>
+</html>
